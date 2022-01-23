@@ -34,12 +34,18 @@ int Is_identical_matrix(int row,int col, int arr[row][col]){
 int Is_symmetric_matrix(int row,int col,int arr[row][col]){
     int k=1;
     for(int i=0;i<row;i++){
-          for(int j=i+1;j<col;j++){
-            if(arr[i][j]!=arr[j][i])
-             k=0;
-             break;
-            
+          for(int j=0;j<col;j++){
+            if(i != j)
+            {
+                if(arr[i][j] != arr[j][i])
+                {
+                    k=0;
+                    break;
+                }
+            }
           }
+          if(k==0)
+             break;
       }
        
       return k;
