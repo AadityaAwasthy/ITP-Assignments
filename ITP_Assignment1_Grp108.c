@@ -4,26 +4,17 @@
 
 int Is_sparse_matrix(int row,int col,int arr[row][col]){
     int cnt=0;
-    int c=0;
     int s=0;
     for(int i=0;i<row;i++){
           for(int j=0;j<col;j++){
             if(arr[i][j]==0)
             cnt++;
-            else
-            c++;
-          }
-          if(cnt > (row*col)/2);
-          {
-              s=1;
-             break;
-          }
-          if(c > (row*col)/2)
-          {
-             s=0;
-             break;
           }
       }
+      if(cnt>((row*col)/2))
+         s=1;
+      else
+         s=0;
     
     return s;
 }
